@@ -3,7 +3,6 @@ import styled from "styled-components";
 // Assets
 import ContactImg1 from "../../assets/img/contact-1.png";
 import ContactImg2 from "../../assets/img/contact-2.png";
-import ContactImg3 from "../../assets/img/contact-3.png";
 
 export default function Contact() {
   return (
@@ -42,11 +41,7 @@ export default function Contact() {
                   <img src={ContactImg2} alt="office" className="radius6" />
                 </ContactImgBox>
               </div>
-              <div style={{ width: "50%" }}>
-                <div style={{ marginTop: "100px" }}>
-                  <img src={ContactImg3} alt="office" className="radius6" />
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
