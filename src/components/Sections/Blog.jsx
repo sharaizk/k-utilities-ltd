@@ -23,7 +23,10 @@ export default function Blog() {
             <br />
             What to do if you have a complaint
             <br />
-            Email: <a href="mailto:info@kutilities.com">info@kutilities.com</a>
+            Email:{" "}
+            <a href="mailto:info@kutilitiesltd.com">info@kutilitiesltd.com</a>
+            <br />
+            Telephone: +442920140217
           </HeaderInfo>
           <ButtonContainer>
             <Button1>COMPLAINT HANDLING PROCEDURE</Button1>

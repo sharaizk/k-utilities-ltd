@@ -43,7 +43,7 @@ const data = {
     {
       title: "What are your fees?",
       content:
-        "Switch For Less charge no fees to our customers as our payments/commissions are recovered from the supplier.",
+        "K Utilities charge no fees to our customers as our payments/commissions are recovered from the supplier.",
     },
     {
       title: "What is an LOA?",
@@ -93,13 +93,13 @@ const data1 = {
     {
       title: "Can I change my tariff?",
       content:
-        "As your tariff is linked to your meter, in order to change your tariff, you will need to change your meter. Switch For Less cannot arrange this as we are not responsible for your meter. This is something you are required to discuss with your supplier once supply is live as they may be able to switch your meter. Typically most tariffs are allocated to best suit you financially therefore it is rarely beneficial to change.",
+        "As your tariff is linked to your meter, in order to change your tariff, you will need to change your meter. K Utilites cannot arrange this as we are not responsible for your meter. This is something you are required to discuss with your supplier once supply is live as they may be able to switch your meter. Typically most tariffs are allocated to best suit you financially therefore it is rarely beneficial to change.",
     },
     {
-      title:"How much notice do I have to give my current supplier?",
-      content:"As per legislation suppliers can nominate the cancellation period of their choosing however most companies work within a 90 – 120 day window at the end of your contractual term."
-    }
-    
+      title: "How much notice do I have to give my current supplier?",
+      content:
+        "As per legislation suppliers can nominate the cancellation period of their choosing however most companies work within a 90 – 120 day window at the end of your contractual term.",
+    },
   ],
 };
 export default function Projects() {

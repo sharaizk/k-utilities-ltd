@@ -54,7 +54,7 @@ export default function Services() {
                 icon="printer"
                 title="Card Machine"
                 subtitle="Flexible payment solutions for small businesses
-                We offer a complete range of fast, reliable, and secure solutions, so you can give your customers the best payment experience possible.
+                We offer a complete range of fast, reliable, and secure solutions, so you can give your business. the best payment experience possible.
                 "
               />
             </ServiceBoxWrapper>
@@ -69,10 +69,11 @@ export default function Services() {
             </ServiceBoxWrapper>
           </ServiceBoxRow>
           <p className="font18 extraBold">
-          We may receive a commission from the energy supplier once the sale is completed and on supply. This is built in via an uplift added to your final unit price and paid to us by the supplier.
+            We may receive a commission from the supplier once the sale is
+            completed and on supply. This is built in via an uplift added to
+            your final unit price and paid to us by the supplier.
           </p>
         </div>
-
       </div>
     </Wrapper>
   );

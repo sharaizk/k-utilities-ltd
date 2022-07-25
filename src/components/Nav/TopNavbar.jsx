@@ -78,7 +78,19 @@ export default function TopNavbar() {
                 smooth={true}
                 offset={-80}
               >
-                Projects
+                FAQs
+              </Link>
+            </li>
+            <li className="semiBold font15 pointer">
+              <Link
+                activeClass="active"
+                style={{ padding: "10px 15px" }}
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-80}
+              >
+                Get a Qoute
               </Link>
             </li>
             <li className="semiBold font15 pointer">
@@ -90,21 +102,10 @@ export default function TopNavbar() {
                 smooth={true}
                 offset={-80}
               >
-                Blog
+                Complaints
               </Link>
             </li>
-            <li className="semiBold font15 pointer">
-              <Link
-                activeClass="active"
-                style={{ padding: "10px 15px" }}
-                to="pricing"
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Pricing
-              </Link>
-            </li>
+
             <li className="semiBold font15 pointer">
               <Link
                 activeClass="active"
