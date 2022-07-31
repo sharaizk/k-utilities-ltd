@@ -2,8 +2,33 @@ import React from "react";
 import styled from "styled-components";
 // Assets
 import "./styles.css";
-
+import { useFormik, Form, FormikProvider } from "formik";
+import * as Yup from "yup";
 export default function Contact() {
+  const ContactSchema = Yup.object().shape({
+    fullName: Yup.string().required("*What is your Full Name?"),
+    email: Yup.string()
+      .email("*Email must be a valid email address")
+      .required("*What's your email?"),
+    telephone: Yup.string().required("*Please enter your telephone number"),
+    subject: Yup.string().required("*Subject is required"),
+    message: Yup.string().required("*What's your message"),
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      fullName: "",
+      email: "",
+      telephone: "",
+      subject: "",
+      message: "",
+    },
+    validationSchema: ContactSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+  const { errors, touched, values, handleSubmit, getFieldProps } = formik;
   return (
     <Wrapper id="contact">
       <div className="lightBg">
@@ -55,53 +80,85 @@ export default function Contact() {
                   details and one of our experts will get in touch with you.
                 </p>
               </HeaderInfo>
-              <Form>
-                <label className="font13">First name:</label>
-                <input
-                  type="text"
-                  id="fname"
-                  name="fname"
-                  className="font20 extraBold"
-                />
-                <label className="font13">Email:</label>
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  className="font20 extraBold"
-                />
-                <label className="font13">Telephone:</label>
-                <input
-                  type="tel"
-                  id="subject"
-                  name="subject"
-                  className="font20 extraBold"
-                />
-                <label className="font13">Subject:</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="font20 extraBold"
-                />
-                <label className="font13">Message:</label>
-                <textarea
-                  rows="4"
-                  cols="50"
-                  type="text"
-                  id="message"
-                  name="message"
-                  className="font20 extraBold"
-                />
-              </Form>
-              <SumbitWrapper className="flex">
-                <ButtonInput
-                  type="submit"
-                  value="Send Message"
-                  className="pointer animate radius8"
-                  style={{ maxWidth: "220px" }}
-                />
-              </SumbitWrapper>
+              <FormikProvider value={formik}>
+                <StyledForm
+                  autoComplete="off"
+                  noValidate
+                  onSubmit={handleSubmit}
+                >
+                  <label className="font13">Full Name:</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    className="font20"
+                    value={values.fullName}
+                    {...getFieldProps("fullName")}
+                  />
+                  {touched.fullName && errors.fullName && (
+                    <ErrorText>{errors?.fullName}</ErrorText>
+                  )}
+                  <label className="font13">Email:</label>
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    className="font20"
+                    value={values.email}
+                    {...getFieldProps("email")}
+                  />
+                  {touched.email && errors.email && (
+                    <ErrorText>{errors?.email}</ErrorText>
+                  )}
+                  <label className="font13">Telephone:</label>
+                  <input
+                    type="tel"
+                    id="telephone"
+                    name="telephone"
+                    className="font20 extraBold"
+                    value={values.telephone}
+                    {...getFieldProps("telephone")}
+                  />
+                  {touched.telephone && errors.telephone && (
+                    <ErrorText>{errors?.telephone}</ErrorText>
+                  )}
+                  <label className="font13">Subject:</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    className="font20 extraBold"
+                    value={values.subject}
+                    {...getFieldProps("subject")}
+                  />
+                  {touched.subject && errors.subject && (
+                    <ErrorText>{errors?.subject}</ErrorText>
+                  )}
+                  <label className="font13">Message:</label>
+                  <textarea
+                    rows="4"
+                    cols="50"
+                    type="text"
+                    id="message"
+                    name="message"
+                    className="font20 extraBold"
+                    value={values.message}
+                    {...getFieldProps("message")}
+                  />
+                  {touched.message && errors.message && (
+                    <ErrorText>{errors?.message}</ErrorText>
+                  )}
+                  <SumbitWrapper className="flex">
+                    <ButtonInput
+                      type="submit"
+                      className="pointer animate radius8"
+                      style={{ maxWidth: "220px" }}
+                    >
+                      Submit
+                    </ButtonInput>
+                  </SumbitWrapper>
+                </StyledForm>
+              </FormikProvider>
             </div>
           </div>
         </div>
@@ -119,8 +176,10 @@ const HeaderInfo = styled.div`
     text-align: center;
   }
 `;
-const Form = styled.form`
+const StyledForm = styled(Form)`
   padding: 70px 0 30px 0;
+  height: auto;
+  transition: all 0.2s ease-in;
   input,
   textarea {
     width: 100%;
@@ -130,7 +189,6 @@ const Form = styled.form`
     box-shadow: none;
     border-bottom: 1px solid #707070;
     height: 30px;
-    margin-bottom: 30px;
   }
   textarea {
     min-height: 100px;
@@ -139,13 +197,14 @@ const Form = styled.form`
     padding: 30px 0;
   }
 `;
-const ButtonInput = styled.input`
+const ButtonInput = styled.button`
   border: 1px solid #7620ff;
   background-color: #7620ff;
   width: 100%;
   padding: 15px;
   outline: none;
   color: #fff;
+  margin-top: 30px;
   :hover {
     background-color: #580cd2;
     border: 1px solid #7620ff;
@@ -202,4 +261,11 @@ const CardPara = styled.p`
 const CardImg = styled.img`
   float: right;
   width: ${(props) => props.$width};
+`;
+
+const ErrorText = styled.p`
+  font-size: 0.8rem;
+  color: #ff3333;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 `;
