@@ -6,7 +6,8 @@ import "./style/flexboxgrid.min.css";
 import './style/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import './index.css'
+import 'react-morphing-modal/dist/ReactMorphingModal.css';
 ReactDOM.render(
   <>
     <App />

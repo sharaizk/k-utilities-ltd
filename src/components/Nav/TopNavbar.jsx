@@ -69,18 +69,7 @@ export default function TopNavbar() {
                 Services
               </Link>
             </li>
-            <li className="semiBold font15 pointer">
-              <Link
-                activeClass="active"
-                style={{ padding: "10px 15px" }}
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                FAQs
-              </Link>
-            </li>
+
             <li className="semiBold font15 pointer">
               <Link
                 activeClass="active"
@@ -91,6 +80,18 @@ export default function TopNavbar() {
                 offset={-80}
               >
                 Get a Qoute
+              </Link>
+            </li>
+            <li className="semiBold font15 pointer">
+              <Link
+                activeClass="active"
+                style={{ padding: "10px 15px" }}
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={-80}
+              >
+                FAQs
               </Link>
             </li>
             <li className="semiBold font15 pointer">
@@ -156,6 +157,3 @@ const UlWrapper = styled.ul`
     display: none;
   }
 `;
-
-
-

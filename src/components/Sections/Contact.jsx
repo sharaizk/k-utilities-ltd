@@ -62,7 +62,7 @@ export default function Contact() {
                 </Card>
                 <Card $color={"hsl(212, 86%, 64%)"}>
                   <CardTitle>Telephone</CardTitle>
-                  <CardPara>+442920140217</CardPara>
+                  <CardPara>02920140217</CardPara>
                   <CardImg
                     src="https://freesvg.org/img/OldFashionedPhone2.png"
                     alt=""

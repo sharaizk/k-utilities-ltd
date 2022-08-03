@@ -62,7 +62,7 @@ export default function Header() {
               one click.
             </HeaderP>
             <BtnWrapper>
-              <FullButton title="Let's Get in touch" />
+              <FullButton title="Let's Get in touch" to="contact"/>
             </BtnWrapper>
           </div>
         </LeftSide>

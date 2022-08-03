@@ -1,19 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-scroll";
 
-export default function FullButton({ title, action, border }) {
+export default function FullButton({ title, action, border,to }) {
   return (
     <Wrapper
       className="animate pointer radius8"
       onClick={action ? () => action() : null}
       border={border}
+      to={to}
+      smooth={true}
+      offset={-50}
     >
       {title}
     </Wrapper>
   );
 }
 
-const Wrapper = styled.button`
+const Wrapper = styled(Link)`
   border: 1px solid ${(props) => (props.border ? "#707070" : "#7620ff")};
   background-color: ${(props) => (props.border ? "transparent" : "#7620ff")};
   width: 100%;
