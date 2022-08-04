@@ -133,7 +133,7 @@ const Wrapper = styled.nav`
   left: 0;
   z-index: 999;
   @media screen and (max-width: 768px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 const NavInner = styled.div`

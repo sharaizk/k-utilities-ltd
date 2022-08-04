@@ -19,7 +19,7 @@ export default function Blog() {
       id: 2,
       title: "Stage One – Raising a complaint",
       description:
-        "We take all complaints seriously and aim to address your concerns thoroughly, promptly, and politely. In the event of a complaint, you should contact us immediately via one of the channelsbelow. Pleaseensureyouincludeyourcontactinformation,businessnameand address as well as an outline of your dispute.",
+        "We take all complaints seriously and aim to address your concerns thoroughly, promptly, and politely. In the event of a complaint, you should contact us immediately via one of the channelsbelow. Please ensure you include your contact information, business name and address as well as an outline of your dispute.",
       contact: [
         {
           id: 201,
@@ -128,9 +128,7 @@ export default function Blog() {
       <div className="whiteBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">
-              Complaints Handling Procedure
-            </h1>
+            <h1 className="font40 extraBold">Complaints Handling Procedure</h1>
             <p className="font13">
               We are committed to providing the highest levels of service to all
               our customers.
@@ -258,7 +256,8 @@ const ModalDetail = styled.div`
   width: 100%;
   border-radius: 20px;
   padding: 3rem 5rem;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -267,7 +266,7 @@ const ModalDetail = styled.div`
   &::before {
     content: "";
     background-image: url(${complainBg});
-    background-size:80%;
+    background-size: 80%;
     background-position: center center;
     background-repeat: no-repeat;
     position: absolute;
@@ -280,15 +279,14 @@ const ModalDetail = styled.div`
     overflow: hidden;
     z-index: 0;
   }
-  @media screen and (max-width:768px){
-      width:80%;
-      height: 80%;
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    height: 80%;
   }
-  @media screen and (max-width:480px){
+  @media screen and (max-width: 480px) {
     height: 100%;
     width: 100%;
-  padding: 1rem 1rem;
-
+    padding: 1rem 1rem;
   }
 `;
 const ModalContainer = styled.div`
@@ -296,11 +294,11 @@ const ModalContainer = styled.div`
   width: 100%;
   background-color: transparent;
   padding: 2rem;
-  @media screen and (max-width:768px){
-      padding: 0rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -308,11 +306,17 @@ const Title = styled.h3`
   font-size: 1.5rem;
   color: #424242;
   font-weight: 700;
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `;
 const Description = styled.p`
   /* margin-bottom: 2vh; */
   text-align: justify;
-
+  @media screen and (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 const ContactTitle = styled.label`
   color: #7c9fda;
@@ -338,5 +342,5 @@ const PolicyContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 5rem;
+  margin-bottom: 3vh;
 `;

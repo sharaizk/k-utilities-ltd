@@ -4,6 +4,9 @@ import styled from "styled-components";
 import "./styles.css";
 import { useFormik, Form, FormikProvider } from "formik";
 import * as Yup from "yup";
+import emailPng from "../../assets/email.png";
+import markPng from "../../assets/mark.png";
+import phonePng from "../../assets/phone.png";
 export default function Contact() {
   const ContactSchema = Yup.object().shape({
     fullName: Yup.string().required("*What is your Full Name?"),
@@ -41,11 +44,7 @@ export default function Contact() {
                   <CardPara>
                     100 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA
                   </CardPara>
-                  <CardImg
-                    src="https://freesvg.org/img/SagarShastry-PlaceMark.png"
-                    alt=""
-                    $width={"20%"}
-                  />
+                  <CardImg src={markPng} alt="" $width={"20%"} />
                 </Card>
                 <Card $color={"hsl(34, 97%, 64%)"}>
                   <CardTitle>Email</CardTitle>
@@ -54,17 +53,14 @@ export default function Contact() {
                       info@kutilitiesltd.com
                     </a>
                   </CardPara>
-                  <CardImg
-                    src="https://freesvg.org/img/1489440856.png"
-                    alt=""
-                    $width={"40%"}
-                  />
+                  <CardImg src={emailPng} alt="" $width={"40%"} />
                 </Card>
                 <Card $color={"hsl(212, 86%, 64%)"}>
                   <CardTitle>Telephone</CardTitle>
                   <CardPara>02920140217</CardPara>
                   <CardImg
-                    src="https://freesvg.org/img/OldFashionedPhone2.png"
+                    src={phonePng}
+                    style={{ marginTop: "2vh" }}
                     alt=""
                     $width={"20%"}
                   />

@@ -20,69 +20,70 @@ export default function Header() {
     cssEase: "linear",
   };
   return (
-    <Slider {...settings}>
-      <Wrapper id="home" className="container flexSpaceCenter">
-        <LeftSide className="flexCenter">
-          <div>
-            <h1 className="extraBold font60">K UTILITIES</h1>
-            <h2 className="extraBold font20">ENERGY CONSULTANTS</h2>
-            <HeaderP className="font15 semiBold">
-              We are a team of experts who in their own field bring a diverse
-              range of skills and experience to your business. Connect with a
-              team that never stops learning.
-            </HeaderP>
+    <SlickWrapper>
+      <Slider {...settings} customPaging={() => <></>}>
+        <Wrapper id="home" className="container flexSpaceCenter">
+          <LeftSide className="flexCenter">
+            <div>
+              <h1 className="extraBold font60">K UTILITIES</h1>
+              <h2 className="extraBold font20">ENERGY CONSULTANTS</h2>
+              <HeaderP className="font15 semiBold">
+                We are a team of experts who in their own field bring a diverse
+                range of skills and experience to your business. Connect with a
+                team that never stops learning.
+              </HeaderP>
+            </div>
+          </LeftSide>
+          <RightSide>
+            <ImageWrapper>
+              <Img
+                className="radius8"
+                src={HeaderImage}
+                alt="office"
+                style={{ zIndex: 9 }}
+              />
 
-          </div>
-        </LeftSide>
-        <RightSide>
-          <ImageWrapper>
-            <Img
-              className="radius8"
-              src={HeaderImage}
-              alt="office"
-              style={{ zIndex: 9 }}
-            />
+              <DotsWrapper>
+                <Dots />
+              </DotsWrapper>
+            </ImageWrapper>
+            <GreyDiv className="lightBg"></GreyDiv>
+          </RightSide>
+        </Wrapper>
+        <Wrapper id="home" className="container flexSpaceCenter">
+          <LeftSide className="flexCenter">
+            <div>
+              <h1 className="extraBold font60">YOUR BUSINESS NEEDS</h1>
+              <h2 className="extraBold font20">AT ONE CLICK</h2>
+              <HeaderP className="font15 semiBold">
+                We will let you know How to expand your business without
+                breaking the bank. All the tools you need to build and keep a
+                profitable business. Manage your energy deals, broadband and
+                card machine, at one click.
+              </HeaderP>
+              <BtnWrapper>
+                <FullButton title="Let's Get in touch" to="contact" />
+              </BtnWrapper>
+            </div>
+          </LeftSide>
+          <RightSide>
+            <ImageWrapper>
+              <Img
+                className="radius8"
+                src={Hero2}
+                alt="office"
+                style={{ zIndex: 9 }}
+              />
 
-            <DotsWrapper>
-              <Dots />
-            </DotsWrapper>
-          </ImageWrapper>
-          <GreyDiv className="lightBg"></GreyDiv>
-        </RightSide>
-      </Wrapper>
-      <Wrapper id="home" className="container flexSpaceCenter">
-        <LeftSide className="flexCenter">
-          <div>
-            <h1 className="extraBold font60">YOUR BUSINESS NEEDS</h1>
-            <h2 className="extraBold font20">AT ONE CLICK</h2>
-            <HeaderP className="font15 semiBold">
-              We will let you know How to expand your business without breaking
-              the bank. All the tools you need to build and keep a profitable
-              business. Manage your energy deals, broadband and card machine, at
-              one click.
-            </HeaderP>
-            <BtnWrapper>
-              <FullButton title="Let's Get in touch" to="contact"/>
-            </BtnWrapper>
-          </div>
-        </LeftSide>
-        <RightSide>
-          <ImageWrapper>
-            <Img
-              className="radius8"
-              src={Hero2}
-              alt="office"
-              style={{ zIndex: 9 }}
-            />
-
-            <DotsWrapper>
-              <Dots />
-            </DotsWrapper>
-          </ImageWrapper>
-          <GreyDiv className="lightBg"></GreyDiv>
-        </RightSide>
-      </Wrapper>
-    </Slider>
+              <DotsWrapper>
+                <Dots />
+              </DotsWrapper>
+            </ImageWrapper>
+            <GreyDiv className="lightBg"></GreyDiv>
+          </RightSide>
+        </Wrapper>
+      </Slider>
+    </SlickWrapper>
   );
 }
 
@@ -95,6 +96,9 @@ const Wrapper = styled.section`
     flex-direction: column;
   }
 `;
+
+const SlickWrapper = styled.div``;
+
 const LeftSide = styled.div`
   width: 50%;
   height: 100%;
