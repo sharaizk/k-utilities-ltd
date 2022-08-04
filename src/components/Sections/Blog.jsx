@@ -11,9 +11,9 @@ export default function Blog() {
   const complainPolicy = [
     {
       id: 1,
-      title: "K Utilities Complaints Handling Procedure",
+      title: "Complaints Handling Procedure",
       description:
-        "K Utilities Ltd is committed to providing the highest levels of service to all our customers. If you are in any way dissatisfied with our services or have any concerns, then please let us know as this will help us to continually improve our service to you.Our aim is to ensure that any issues you may raise are properly addressed and appropriate actions are taken where necessary, as we thrive for customer excellence.",
+        "K Utilities is committed to providing the highest levels of service to all our customers. If you are in any way dissatisfied with our services or have any concerns, then please let us know as this will help us to continually improve our service to you.Our aim is to ensure that any issues you may raise are properly addressed and appropriate actions are taken where necessary, as we thrive for customer excellence.",
     },
     {
       id: 2,

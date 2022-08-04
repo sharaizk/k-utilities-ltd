@@ -84,7 +84,7 @@ export default function Contact() {
               smooth={true}
               offset={-80}
             >
-              Complaints
+              Complaints Handling Procedure
             </Link>
             <Link
               className="whiteColor animate pointer font13"
@@ -94,6 +94,17 @@ export default function Contact() {
             >
               Contact
             </Link>
+          </LinksContainer>
+          <LinksContainer style={{ opacity: "50%" }}>
+            <p className="whiteColor animate pointer font13">
+              Tel: 02920140217
+            </p>
+            <a
+              className="whiteColor animate pointer font13"
+              href="mailto:info@kutilitiesltd.com"
+            >
+              Email: info@kutilitiesltd.com
+            </a>
           </LinksContainer>
         </div>
       </div>
@@ -109,8 +120,17 @@ const InnerWrapper = styled.div``;
 const LinksContainer = styled.div`
   height: 100%;
   width: 50%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
 `;

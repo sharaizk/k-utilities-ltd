@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 // Assets
 import "./styles.css";
@@ -7,7 +7,9 @@ import * as Yup from "yup";
 import emailPng from "../../assets/email.png";
 import markPng from "../../assets/mark.png";
 import phonePng from "../../assets/phone.png";
+import emailjs from "@emailjs/browser";
 export default function Contact() {
+  const form = useRef(null);
   const ContactSchema = Yup.object().shape({
     fullName: Yup.string().required("*What is your Full Name?"),
     email: Yup.string()
@@ -27,9 +29,18 @@ export default function Contact() {
       message: "",
     },
     validationSchema: ContactSchema,
-    onSubmit: (values) => {
-      console.log(values);
-      window.location = "mailto:info@kutilitiesltd.com";
+    onSubmit: async (values) => {
+      try {
+        const res = await emailjs.sendForm(
+          "service_0utiruc",
+          "template_ab3qic3",
+          form.current,
+          "XwbDQm3Lekkjh80AQ"
+        );
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
     },
   });
   const { errors, touched, values, handleSubmit, getFieldProps } = formik;
@@ -82,6 +93,7 @@ export default function Contact() {
                   autoComplete="off"
                   noValidate
                   onSubmit={handleSubmit}
+                  ref={form}
                 >
                   <label className="font13">Full Name:</label>
                   <input
