@@ -29,6 +29,7 @@ export default function Contact() {
     validationSchema: ContactSchema,
     onSubmit: (values) => {
       console.log(values);
+      window.location = "mailto:info@kutilitiesltd.com";
     },
   });
   const { errors, touched, values, handleSubmit, getFieldProps } = formik;
@@ -111,7 +112,7 @@ export default function Contact() {
                     type="tel"
                     id="telephone"
                     name="telephone"
-                    className="font20 extraBold"
+                    className="font20"
                     value={values.telephone}
                     {...getFieldProps("telephone")}
                   />
@@ -123,7 +124,7 @@ export default function Contact() {
                     type="text"
                     id="subject"
                     name="subject"
-                    className="font20 extraBold"
+                    className="font20"
                     value={values.subject}
                     {...getFieldProps("subject")}
                   />
@@ -137,7 +138,7 @@ export default function Contact() {
                     type="text"
                     id="message"
                     name="message"
-                    className="font20 extraBold"
+                    className="font20"
                     value={values.message}
                     {...getFieldProps("message")}
                   />
