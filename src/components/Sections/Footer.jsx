@@ -92,7 +92,7 @@ export default function Contact() {
               smooth={true}
               offset={-80}
             >
-              Contact
+              Contact Us
             </Link>
           </LinksContainer>
           <LinksContainer style={{ opacity: "50%" }}>

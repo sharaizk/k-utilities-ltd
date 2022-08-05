@@ -111,7 +111,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             smooth={true}
             offset={-60}
           >
-            Contact
+            Contact Us
           </Link>
         </li>
       </UlStyle>

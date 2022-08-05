@@ -171,7 +171,7 @@ export default function Blog() {
 
                         {policy?.contact?.map((cont) => {
                           const baseHref =
-                            cont?.title === "Email" ? "mailto:" : "";
+                            cont?.title === "Email" ? "mailto://" : "";
                           const onlineTitle = cont?.isTitleHidden
                             ? ""
                             : `${cont?.title} : `;
@@ -262,6 +262,7 @@ const ModalDetail = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  will-change: transform;
   background-color: #fff;
   &::before {
     content: "";
@@ -291,6 +292,7 @@ const ModalDetail = styled.div`
 `;
 const ModalContainer = styled.div`
   height: 100%;
+  will-change: display;
   width: 100%;
   background-color: transparent;
   padding: 2rem;
