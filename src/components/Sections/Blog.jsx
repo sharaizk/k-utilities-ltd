@@ -19,7 +19,7 @@ export default function Blog() {
       id: 2,
       title: "Stage One – Raising a complaint",
       description:
-        "We take all complaints seriously and aim to address your concerns thoroughly, promptly, and politely. In the event of a complaint, you should contact us immediately via one of the channelsbelow. Please ensure you include your contact information, business name and address as well as an outline of your dispute.",
+        "We take all complaints seriously and aim to address your concerns thoroughly, promptly, and politely. In the event of a complaint, you should contact us immediately via one of the channels below. Please ensure you include your contact information, business name and address as well as an outline of your dispute.",
       contact: [
         {
           id: 201,

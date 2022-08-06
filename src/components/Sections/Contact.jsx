@@ -3,6 +3,7 @@ import styled from "styled-components";
 // Assets
 import "./styles.css";
 import { useFormik, Form, FormikProvider } from "formik";
+import { toast } from "react-toastify";
 import * as Yup from "yup";
 import emailPng from "../../assets/email.png";
 import markPng from "../../assets/mark.png";
@@ -15,7 +16,9 @@ export default function Contact() {
     email: Yup.string()
       .email("*Email must be a valid email address")
       .required("*What's your email?"),
-    telephone: Yup.string().required("*Please enter your telephone number"),
+    telephone: Yup.string()
+      .max(11)
+      .required("*Please enter your telephone number"),
     subject: Yup.string().required("*Subject is required"),
     message: Yup.string().required("*What's your message"),
   });
@@ -29,21 +32,36 @@ export default function Contact() {
       message: "",
     },
     validationSchema: ContactSchema,
-    onSubmit: async (values) => {
+    onSubmit: async (values, {resetForm}) => {
+      const loadingToast = toast.loading("Sending your message");
       try {
-        const res = await emailjs.sendForm(
-          "service_0utiruc",
+        await emailjs.sendForm(
+          "service_fhon8nf",
           "template_ab3qic3",
           form.current,
           "XwbDQm3Lekkjh80AQ"
         );
-        console.log(res);
+        toast.update(loadingToast, {
+          render: "Thank You, you will hear from us soon.",
+          type: "success",
+          isLoading: false,
+          closeButton: true,
+          closeOnClick: true,
+        });
+        resetForm()
       } catch (error) {
-        console.log(error);
+        toast.update(loadingToast, {
+          render: "Couldn't send your message, Please wait till we fix it.",
+          type: "error",
+          isLoading: false,
+          closeButton: true,
+          closeOnClick: true,
+        });
       }
     },
   });
-  const { errors, touched, values, handleSubmit, getFieldProps } = formik;
+  const { errors, touched, values, handleSubmit, getFieldProps, isSubmitting } =
+    formik;
   return (
     <Wrapper id="contact">
       <div className="lightBg">
@@ -121,7 +139,7 @@ export default function Contact() {
                   )}
                   <label className="font13">Telephone:</label>
                   <input
-                    type="tel"
+                    type="number"
                     id="telephone"
                     name="telephone"
                     className="font20"
@@ -162,6 +180,7 @@ export default function Contact() {
                       type="submit"
                       className="pointer animate radius8"
                       style={{ maxWidth: "220px" }}
+                      $disabled={isSubmitting}
                     >
                       Submit
                     </ButtonInput>
@@ -207,10 +226,11 @@ const StyledForm = styled(Form)`
   }
 `;
 const ButtonInput = styled.button`
-  border: 1px solid #7620ff;
-  background-color: #7620ff;
+  border: 1px solid ${(props) => (props.$disabled ? "#d1cfcf" : "#7620ff")};
+  background-color: ${(props) => (props.$disabled ? "#d1cfcf" : "#7620ff")};
   width: 100%;
   padding: 15px;
+  pointer-events: ${(props) => (props.$disabled ? "none" : "all")};
   outline: none;
   color: #fff;
   margin-top: 30px;

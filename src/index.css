@@ -1,12 +1,23 @@
-*{
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
-body{
-    overflow-x: hidden !important;
+body {
+  overflow-x: hidden !important;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
+}
+.slick-initialized {
+  overflow: hidden;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
-.slick-initialized { overflow: hidden; }
