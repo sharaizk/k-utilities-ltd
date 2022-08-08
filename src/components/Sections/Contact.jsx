@@ -36,7 +36,7 @@ export default function Contact() {
       const loadingToast = toast.loading("Sending your message");
       try {
         await emailjs.sendForm(
-          "service_fhon8nf",
+          "service_5e2ni8i",
           "template_ab3qic3",
           form.current,
           "XwbDQm3Lekkjh80AQ"
