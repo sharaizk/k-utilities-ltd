@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 // Assets
 import logo from "../../assets/img/logo.png";
 
@@ -78,14 +79,14 @@ export default function Contact() {
             >
               FAQs
             </Link>
-            <Link
+            <NavLink
               className="whiteColor animate pointer font13"
-              to="blog"
+              to="/complain-handling-procedure"
               smooth={true}
               offset={-80}
             >
               Complaints Handling Procedure
-            </Link>
+            </NavLink>
             <Link
               className="whiteColor animate pointer font13"
               to="contact"

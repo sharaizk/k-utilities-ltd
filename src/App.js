@@ -1,9 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 // Screens
-import Landing from "./screens/Landing.jsx";
 import { ToastContainer } from "react-toastify";
-
+import Router from "./routes/routes.js";
 import "react-toastify/dist/ReactToastify.css";
 export default function App() {
   return (
@@ -27,7 +26,7 @@ export default function App() {
         draggable
         pauseOnHover
       />
-      <Landing />
+      <Router />
     </>
   );
 }

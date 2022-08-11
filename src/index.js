@@ -1,18 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./style/flexboxgrid.min.css";
-import './style/index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './index.css'
-import 'react-morphing-modal/dist/ReactMorphingModal.css';
+import "./style/index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+import "react-morphing-modal/dist/ReactMorphingModal.css";
+import { BrowserRouter } from "react-router-dom";
 ReactDOM.render(
-  <>
+  <BrowserRouter>
     <App />
-  </>,
-  document.getElementById('root')
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
