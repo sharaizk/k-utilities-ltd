@@ -82,8 +82,8 @@ export default function Contact() {
             <NavLink
               className="whiteColor animate pointer font13"
               to="/complain-handling-procedure"
-              smooth={true}
-              offset={-80}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Complaints Handling Procedure
             </NavLink>
