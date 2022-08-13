@@ -326,7 +326,7 @@ const ContactTitle = styled.label`
 
 const ModalListContainer = styled.ul`
   list-style: disc;
-  margin-top: 3vh;
+  /* margin-top: 3vh; */
 `;
 const ModalList = styled.li`
   margin-left: 2vw;

@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import { Link as NavLink, useLocation } from "react-router-dom";
 // Components
 import Sidebar from "../Nav/Sidebar";
 import Backdrop from "../Elements/Backdrop";
 // Assets
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 import logo from "../../assets/img/logo.png";
+const StyledLogo = styled.img`
+  height: auto;
+  width: 20%;
+`;
 export default function TopNavbar() {
+  const location = useLocation();
+
   const [y, setY] = useState(window.scrollY);
   const [sidebarOpen, toggleSidebar] = useState(false);
 
@@ -18,11 +25,6 @@ export default function TopNavbar() {
     };
   }, [y]);
 
-  const StyledLogo = styled.img`
-    height: auto;
-    width: 20%;
-  `;
-
   return (
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
@@ -32,94 +34,98 @@ export default function TopNavbar() {
         style={y > 100 ? { height: "60px" } : { height: "80px" }}
       >
         <NavInner className="container flexSpaceCenter">
-          <Link className="pointer flexNullCenter" to="home" smooth={true}>
+          <NavLink className="pointer flexNullCenter" to="/">
             <StyledLogo src={logo} alt="logo" />
             <h1 style={{ marginLeft: "15px" }} className="font20 extraBold">
               K Utilities Ltd
             </h1>
-          </Link>
-          <BurderWrapper
-            className="pointer"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-          >
-            <BurgerIcon />
-          </BurderWrapper>
-          <UlWrapper className="flexNullCenter">
-            <li className="semiBold font15 pointer">
-              <Link
-                activeClass="active"
-                style={{ padding: "10px 15px" }}
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={-80}
+          </NavLink>
+          {location.pathname === "/" && (
+            <>
+              <BurderWrapper
+                className="pointer"
+                onClick={() => toggleSidebar(!sidebarOpen)}
               >
-                Home
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link
-                activeClass="active"
-                style={{ padding: "10px 15px" }}
-                to="services"
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Services
-              </Link>
-            </li>
+                <BurgerIcon />
+              </BurderWrapper>
+              <UlWrapper className="flexNullCenter">
+                <li className="semiBold font15 pointer">
+                  <Link
+                    activeClass="active"
+                    style={{ padding: "10px 15px" }}
+                    to="home"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li className="semiBold font15 pointer">
+                  <Link
+                    activeClass="active"
+                    style={{ padding: "10px 15px" }}
+                    to="services"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                  >
+                    Services
+                  </Link>
+                </li>
 
-            <li className="semiBold font15 pointer">
-              <Link
-                activeClass="active"
-                style={{ padding: "10px 15px" }}
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Get a Qoute
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link
-                activeClass="active"
-                style={{ padding: "10px 15px" }}
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                FAQs
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link
-                activeClass="active"
-                style={{ padding: "10px 15px" }}
-                to="blog"
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Complaints
-              </Link>
-            </li>
+                <li className="semiBold font15 pointer">
+                  <Link
+                    activeClass="active"
+                    style={{ padding: "10px 15px" }}
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                  >
+                    Get a Qoute
+                  </Link>
+                </li>
+                <li className="semiBold font15 pointer">
+                  <Link
+                    activeClass="active"
+                    style={{ padding: "10px 15px" }}
+                    to="projects"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                  >
+                    FAQs
+                  </Link>
+                </li>
+                <li className="semiBold font15 pointer">
+                  <Link
+                    activeClass="active"
+                    style={{ padding: "10px 15px" }}
+                    to="blog"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                  >
+                    Complaints
+                  </Link>
+                </li>
 
-            <li className="semiBold font15 pointer">
-              <Link
-                activeClass="active"
-                style={{ padding: "10px 15px" }}
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Contact Us
-              </Link>
-            </li>
-          </UlWrapper>
+                <li className="semiBold font15 pointer">
+                  <Link
+                    activeClass="active"
+                    style={{ padding: "10px 15px" }}
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+              </UlWrapper>
+            </>
+          )}
         </NavInner>
       </Wrapper>
     </>

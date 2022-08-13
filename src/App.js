@@ -4,6 +4,9 @@ import { Helmet } from "react-helmet";
 import { ToastContainer } from "react-toastify";
 import Router from "./routes/routes.js";
 import "react-toastify/dist/ReactToastify.css";
+import TopNavbar from "./components/Nav/TopNavbar";
+
+
 export default function App() {
   return (
     <>
@@ -26,6 +29,7 @@ export default function App() {
         draggable
         pauseOnHover
       />
+      <TopNavbar />
       <Router />
     </>
   );
