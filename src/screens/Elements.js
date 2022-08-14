@@ -5,7 +5,7 @@ export const PDFConatiner = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding: 10% 10% 5% 10%;
+  padding: 100px 10% 5% 10%;
   overflow-x: hidden !important;
 
 `;
