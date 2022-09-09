@@ -89,6 +89,12 @@ const Complaints = () => {
         "You can contact the Ombudsman either by post, email, letter or complete the form online.",
       contact: [
         {
+          id: 206,
+          title: "Post",
+          detail:
+            "Ombudsman Services: Energy, P.O. Box 966, Warrington, WA4 9DF",
+        },
+        {
           id: 204,
           title: "Telephone",
           detail: "0330 440 1624",
@@ -96,12 +102,7 @@ const Complaints = () => {
         {
           id: 205,
           title: "Email",
-          detail: "consumeraffairs@ofgem.gov.uk",
-        },
-        {
-          id: 206,
-          title: "Post",
-          detail: "Ombudsman Services Energy, PO Box, Warrington, WA4 9DF",
+          detail: "enquiry@ombudsman-services.org",
         },
         {
           id: 207,
